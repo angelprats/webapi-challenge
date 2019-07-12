@@ -17,11 +17,6 @@ const express = require('express');
 
 const server = require('./server');
 
-// server.use(express.json());
-
-// server.get('/', (req, res) => {
-//     res.send('Hello Sprint, Challenge Day!!');
-// });
 
 
 const port = 7000;
