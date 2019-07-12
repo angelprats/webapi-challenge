@@ -23,7 +23,6 @@ server.get('/projects', (req, res) => {
     })
 })
 
-
 //post
 server.post('/projects', (req, res) => {
     const projectInfo = req.body;
@@ -79,7 +78,7 @@ server.get('/projects/:id/actions', (req, res) => {
     .catch(err => res.status(500).json({ message: 'having trouble getting projec action'}))
 })
 
-
+//get
 server.get('/actions', (req, res) => {
     actionModel.get()
     .then(actions => {
@@ -90,6 +89,7 @@ server.get('/actions', (req, res) => {
     })
 })
 
+//post
 server.post('/actions', (req, res) => {
     const actionInfo = req.body;
 
