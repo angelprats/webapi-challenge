@@ -60,7 +60,7 @@ server.put('/projects/:id', (req, res) => {
     const id = req.params.id;
     const changes = req.body;
     projectModel.update(id, changes)
-    .then(update =>) {
+    .then(update => {
         if(update) {
             res.status(200).json({ success: true, update })
         } else {
@@ -80,6 +80,19 @@ server.get('/projects/:id/actions', (req, res) => {
 })
 
 
+server.get('/actions', (req, res) => {
+    actionModel.get()
+    .then(actions => {
+        res.status(200).json(actions)
+    }) 
+    .catch(err => {
+        res.status(500).json({ error: 'error retrieving the actions' })
+    })
+})
+
+server.post('/actions', (req, res) => {
+
+})
 
 
 module.exports = server;
